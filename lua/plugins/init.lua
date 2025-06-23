@@ -24,6 +24,7 @@ return {
     "Civitasv/cmake-tools.nvim",
     lazy = true,
     dependencies = {
+      "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
     },
     init = function()
@@ -66,6 +67,10 @@ return {
         },
       },
     },
+  },
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
   },
   {
     "WilsonOh/emoji_picker-nvim",
