@@ -21,14 +21,14 @@ See [lua/mappings.lua](lua/mappings.lua) and cheatsheet (`<spc>ch`).
 
 - telescope-live-grep-args:
 ```
-  `<spc>fw`  -- live grep modified to accept arguments
+  <spc>fw  -- live grep modified to accept arguments
   press `<C-k>` to quote input and add arguments
 ```
 - vim-lastplace: reopens files at your last edit position
 
 ## Plain (Neo)Vim tricks
 ```
-  `gj / gk`  -- move the cursor through wrapped lines
+  gj / gk  -- move the cursor through wrapped lines
 ```
 ## Original NvChad README.md contents
 
