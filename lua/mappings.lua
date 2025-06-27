@@ -22,6 +22,7 @@ map("n", "<leader>ak", "<cmd> AerialPrev <CR>", { desc = "Aerial Prev" })
 map("n", "<leader>cp", "<cmd> CMakeSelectBuildPreset <CR>", { desc = "CMake Select build preset" })
 map("n", "<leader>k", function()
   vim.cmd "wa"
+  vim.cmd "Trouble quickfix close"
   vim.cmd "CMakeBuild"
 end, { desc = "CMake Write all and build" })
 
