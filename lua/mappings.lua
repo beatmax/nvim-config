@@ -19,6 +19,7 @@ map("n", "<leader>ak", "<cmd> AerialPrev <CR>", { desc = "Aerial Prev" })
 
 -- CMake tools
 -- https://github.com/Civitasv/cmake-tools.nvim
+map("n", "<leader>cp", "<cmd> CMakeSelectBuildPreset <CR>", { desc = "CMake Select build preset" })
 map("n", "<leader>k", function()
   vim.cmd "wa"
   vim.cmd "CMakeBuild"

@@ -41,11 +41,30 @@ M.base46 = {
 
     -- workaround for https://github.com/neovim/neovim/issues/9800
     CursorLine = { ctermfg = "White" },
+
+    -- statusline cmake module
+    St_cmake = { fg="#a1b7df" },
   },
 }
 
 -- M.nvdash = { load_on_startup = true }
 M.ui = {
+  statusline = {
+    -- add a cmake module
+    -- default order: https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/stl/utils.lua
+    order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cmake", "cwd", "cursor" },
+    modules = {
+      cmake = function()
+        if package.loaded['cmake-tools'] then
+          local cmake = require("cmake-tools")
+          if cmake.is_cmake_project() and cmake.get_build_preset() then
+            return "%#St_cmake# ⚙ " .. cmake.get_build_preset() .. " "
+          end
+        end
+        return ""
+      end,
+    }
+  },
   tabufline = {
     lazyload = false
   }
