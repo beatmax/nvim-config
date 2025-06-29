@@ -4,7 +4,7 @@ local map = vim.keymap.set
 
 -- General (no plugin)
 map("n", "Zz", "<cmd> qa <CR>", { desc = "General Quit all" })
-map("n", "<leader>ts", "<cmd> windo set spell! <CR>", { desc = "General Toggle spell checking (all windows)" })
+map("n", "<leader>sp", "<cmd> windo set spell! <CR>", { desc = "General Toggle spell checking (all windows)" })
 map("n", "<leader>wr", "<cmd> windo set wrap! <CR>", { desc = "General Toggle wrap (all windows)" })
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
 -- map("i", "jk", "<ESC>")
@@ -67,6 +67,27 @@ map("n", "go", "<cmd> LspClangdSwitchSourceHeader <CR>", { desc = "LSP Clangd sw
 -- Neogit
 -- https://github.com/NeogitOrg/neogit
 map("n", "<leader>gg", "<cmd> Neogit <CR>", { desc = "Neogit Open" })
+
+-- Neotest
+-- https://github.com/nvim-neotest
+map("n", "<leader>ta", function()
+  require("neotest").run.run { suite = true }
+end, { desc = "Neotest Run all" })
+map("n", "<leader>td", function()
+  require("neotest").run.run { strategy = "dap" }
+end, { desc = "Neotest Debug nearest" })
+map("n", "<leader>tf", function()
+  require("neotest").run.run(vim.fn.expand "%")
+end, { desc = "Neotest Run file" })
+map("n", "<leader>tn", function()
+  require("neotest").run.run()
+end, { desc = "Neotest Run nearest" })
+map("n", "<leader>to", function()
+  require("neotest").output_panel.toggle()
+end, { desc = "Neotest Output toggle" })
+map("n", "<leader>ts", function()
+  require("neotest").summary.toggle()
+end, { desc = "Neotest Summary toggle" })
 
 -- Telescope
 map("n", "<C-b>", "<cmd> Telescope buffers sort_mru=true <CR>", { desc = "Telescope Find buffers (mru)" })

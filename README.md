@@ -11,7 +11,10 @@ NvChad/starter.
 - <spc>fm  -- format code, also in visual mode (conform plugin)
 - <spc>th  -- themes
 ```
+
 See all features: https://nvchad.com/docs/features/
+
+Plain NvChad mappings: https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/mappings.lua
 
 ## Plugins and mappings
 
@@ -19,11 +22,16 @@ See [lua/mappings.lua](lua/mappings.lua) and cheatsheet (`<spc>ch`).
 
 ### Notes on specific plugins
 
+- neotest-gtest: to run tests for the first time, assign them to executables;
+open the summary window (<spc>ts), mark directory or source file (m) and run
+:ConfigureGtest (TODO: https://github.com/alfaix/neotest-gtest/issues/24)
+
 - telescope-live-grep-args:
 ```
   <spc>fw  -- live grep modified to accept arguments
   press `<C-k>` to quote input and add arguments
 ```
+
 - vim-lastplace: reopens files at your last edit position
 
 ## Plain (Neo)Vim tricks
