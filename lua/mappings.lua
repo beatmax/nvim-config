@@ -19,6 +19,7 @@ map("n", "<leader>ak", "<cmd> AerialPrev <CR>", { desc = "Aerial Prev" })
 
 -- CMake tools
 -- https://github.com/Civitasv/cmake-tools.nvim
+map("n", "<leader>cd", "<cmd> CMakeDebug <CR>", { desc = "CMake Debug" })
 map("n", "<leader>cp", "<cmd> CMakeSelectBuildPreset <CR>", { desc = "CMake Select build preset" })
 map("n", "<leader>k", function()
   vim.cmd "wa"
@@ -29,6 +30,29 @@ end, { desc = "CMake Write all and build" })
 -- Emoji picker
 -- https://github.com/WilsonOh/emoji_picker-nvim
 map("i", "<C-e>", "<cmd> EmojiPicker <CR>", { desc = "Emoji Picker" })
+
+-- Dap
+-- https://github.com/mfussenegger/nvim-dap
+-- note: during a debug session, arrow keys are mapped to step over/into/out and restart frame
+map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Dap Toggle breakpoint" })
+map("n", "<leader>dc", "<cmd> DapContinue <CR>", { desc = "Dap Continue" })
+map("n", "<leader>dr", function()
+  require("dap").run_to_cursor()
+end, { desc = "Dap Run to cursor" })
+map("n", "<leader>dt", "<cmd> DapTerminate <CR>", { desc = "Dap Terminate" })
+
+-- Dap UI
+-- https://github.com/rcarriga/nvim-dap-ui
+map({ "n", "v" }, "<leader>de", function() -- note: run twice to enter window
+  require("dapui").eval()
+end, { desc = "Dap UI eval" })
+map("n", "<leader>dg", function()
+  require("dapui").toggle()
+end, { desc = "Dap UI toggle" })
+
+-- Dap virtual text
+-- https://github.com/theHamsta/nvim-dap-virtual-text
+map("n", "<leader>dv", "<cmd> DapVirtualTextToggle <CR>", { desc = "Dap Virtual text toggle" })
 
 -- Diffview
 -- https://github.com/sindrets/diffview.nvim

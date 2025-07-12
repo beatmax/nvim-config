@@ -78,6 +78,15 @@ return {
     config = true,
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    ft = { "c", "cpp", "rust" },
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "williamboman/mason.nvim",
+    },
+    opts = require "configs.mason-nvim-dap",
+  },
+  {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
@@ -103,6 +112,32 @@ return {
         },
       }
     end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "mfussenegger/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      require "configs.dap"
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+    },
+    config = function()
+      require "configs.dap-ui"
+    end,
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    opts = {
+      commented = true,
+      virt_text_pos = "eol",
+    },
   },
   {
     "neovim/nvim-lspconfig",
