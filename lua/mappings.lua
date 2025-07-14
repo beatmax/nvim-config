@@ -129,7 +129,11 @@ map(
 
 -- Trouble
 -- https://github.com/folke/trouble.nvim
-map("n", "<leader>tt", function()
+map("n", "tq", function()
   vim.cmd "cclose"
   vim.cmd "Trouble quickfix toggle"
 end, { desc = "Trouble Toggle quickfix list" })
+-- TODO: don't work nicely; but '[q' and ']q' can be used for the quicklist
+-- https://github.com/folke/trouble.nvim/discussions/376
+-- map("n", "tn", "<cmd> Trouble next <CR>", { desc = "Trouble next" })
+-- map("n", "tp", "<cmd> Trouble prev <CR>", { desc = "Trouble prev" })
