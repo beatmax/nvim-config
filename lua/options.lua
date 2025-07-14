@@ -7,5 +7,6 @@ local o = vim.o
 
 o.list = true
 o.listchars = "tab:▸·,trail:·,nbsp:+"
+o.fixendofline = false
 o.number = false
 o.whichwrap = "b,s"
