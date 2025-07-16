@@ -2,6 +2,9 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+-- Plain NvChad mappings:
+-- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/mappings.lua
+
 -- General (no plugin)
 map("n", "Zz", "<cmd> qa <CR>", { desc = "General Quit all" })
 map("n", "<leader>sp", "<cmd> windo set spell! <CR>", { desc = "General Toggle spell checking (all windows)" })
@@ -9,6 +12,11 @@ map("n", "<leader>wr", "<cmd> windo set wrap! <CR>", { desc = "General Toggle wr
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
 -- map("i", "jk", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Replace default mappings conflicting with xmonad
+map({ "n", "t" }, "<A-o>", function()
+  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
+end, { desc = "terminal toggleable horizontal term" })
 
 -- Aerial: A code outline window for skimming and quick navigation
 -- https://github.com/stevearc/aerial.nvim
@@ -33,7 +41,7 @@ map("i", "<C-e>", "<cmd> EmojiPicker <CR>", { desc = "Emoji Picker" })
 
 -- Dap
 -- https://github.com/mfussenegger/nvim-dap
--- note: during a debug session, arrow keys are mapped to step over/into/out and restart frame
+-- note: during a debug session, ctrl + arrow keys are mapped to step over/into/out and restart frame
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Dap Toggle breakpoint" })
 map("n", "<leader>dc", "<cmd> DapContinue <CR>", { desc = "Dap Continue" })
 map("n", "<leader>dr", function()

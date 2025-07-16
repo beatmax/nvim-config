@@ -14,8 +14,6 @@ NvChad/starter.
 
 See all features: https://nvchad.com/docs/features/
 
-Plain NvChad mappings: https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/mappings.lua
-
 ## Plugins and mappings
 
 See [lua/mappings.lua](lua/mappings.lua) and cheatsheet (`<spc>ch`).

@@ -5,10 +5,10 @@ local dap = require "dap"
 local wk = require "which-key"
 
 local dap_keymaps = {
-  { "<Down>", dap.step_over, desc = "Dap Step Over" },
-  { "<Right>", dap.step_into, desc = "Dap Step Into" },
-  { "<Left>", dap.step_out, desc = "Dap Step Out" },
-  { "<Up>", dap.restart_frame, desc = "Dap Step Out" },
+  { "<C-Down>", dap.step_over, desc = "Dap Step Over" },
+  { "<C-Right>", dap.step_into, desc = "Dap Step Into" },
+  { "<C-Left>", dap.step_out, desc = "Dap Step Out" },
+  { "<C-Up>", dap.restart_frame, desc = "Dap Step Out" },
 }
 local dap_keymaps_active = false
 
