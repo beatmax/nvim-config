@@ -73,9 +73,25 @@ return {
     opts = {},
   },
   {
+    "allaman/emoji.nvim",
+    cmd = { "Emoji" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
+    config = true,
+  },
+  {
     "WilsonOh/emoji_picker-nvim",
     cmd = { "EmojiPicker" },
-    config = true,
+    config = function()
+      require("emoji_picker").setup {
+        window = {
+          height = 9,
+        },
+        emoji_list = require "configs.emojis",
+      }
+    end,
   },
   {
     "jay-babu/mason-nvim-dap.nvim",

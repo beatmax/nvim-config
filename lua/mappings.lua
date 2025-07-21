@@ -35,6 +35,11 @@ map("n", "<leader>k", function()
   vim.cmd "CMakeBuild"
 end, { desc = "CMake Write all and build" })
 
+-- Emoji
+-- https://github.com/Allaman/emoji.nvim
+-- note: a space is added intentionally to workaround insertion at EOL
+map("i", "<C-A-e>", " <cmd> Emoji insert <CR>", { desc = "Emoji Insert" })
+
 -- Emoji picker
 -- https://github.com/WilsonOh/emoji_picker-nvim
 map("i", "<C-e>", "<cmd> EmojiPicker <CR>", { desc = "Emoji Picker" })
