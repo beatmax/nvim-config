@@ -95,6 +95,7 @@ end, { desc = "Gitsigns Jump to prev hunk" })
 
 -- LSP
 map("n", "go", "<cmd> LspClangdSwitchSourceHeader <CR>", { desc = "LSP Clangd switch source/header" })
+map("n", "gs", "<cmd> LspClangdShowSymbolInfo <CR>", { desc = "LSP Clangd show symbol info" })
 
 -- Neogit
 -- https://github.com/NeogitOrg/neogit
