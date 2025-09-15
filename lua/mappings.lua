@@ -14,8 +14,9 @@ map("n", "<leader>wr", "<cmd> windo set wrap! <CR>", { desc = "General Toggle wr
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- Replace default mappings conflicting with xmonad
+-- note: "sp" changed to "bo sp" to take full width
 map({ "n", "t" }, "<A-o>", function()
-  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
+  require("nvchad.term").toggle { pos = "bo sp", id = "htoggleTerm" }
 end, { desc = "terminal toggleable horizontal term" })
 
 -- Aerial: A code outline window for skimming and quick navigation
