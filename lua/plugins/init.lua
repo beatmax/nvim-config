@@ -232,6 +232,20 @@ return {
     end,
   },
   {
+    "johmsalas/text-case.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("textcase").setup {}
+      require("telescope").load_extension "textcase"
+    end,
+    keys = {
+      "ga", -- default invocation prefix
+      { "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "Telescope" },
+    },
+    -- note: not lazy, to be able to use the interactive feature of the `Subs` command right away
+    lazy = false,
+  },
+  {
     "folke/trouble.nvim",
     event = "VeryLazy",
     dependencies = {

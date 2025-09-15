@@ -142,6 +142,10 @@ map(
   { desc = "Telescope LSP dynamic workspace symbols" }
 )
 
+-- Text-case
+-- https://github.com/johmsalas/text-case.nvim
+-- "ga" prefix, set on plugin spec (default_keymappings_enabled)
+
 -- Trouble
 -- https://github.com/folke/trouble.nvim
 map("n", "tq", function()

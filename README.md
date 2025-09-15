@@ -30,6 +30,10 @@ open the summary window (<spc>ts), mark directory or source file (m) and run
   press `<C-k>` to quote input and add arguments
 ```
 
+- text-case: besides text case conversion, provides the "Subs" command that can
+be used like the default "substitute" command, but the replaced text will keep
+the original text case
+
 - vim-lastplace: reopens files at your last edit position
 
 ## Plain (Neo)Vim tricks
