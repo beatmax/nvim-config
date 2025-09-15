@@ -24,6 +24,14 @@ See [lua/mappings.lua](lua/mappings.lua) and cheatsheet (`<spc>ch`).
 open the summary window (<spc>ts), mark directory or source file (m) and run
 :ConfigureGtest (TODO: https://github.com/alfaix/neotest-gtest/issues/24)
 
+- py-lsp (and none-ls): install 'python-lsp-server' and 'black', e.g. with
+pipx; create ~/.config/black with, for example:
+```
+[tool.black]
+line-length = 120
+skip-magic-trailing-comma = true
+```
+
 - telescope-live-grep-args:
 ```
   <spc>fw  -- live grep modified to accept arguments
