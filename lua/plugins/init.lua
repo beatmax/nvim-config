@@ -130,6 +130,23 @@ return {
     end,
   },
   {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local null_ls = require "null-ls"
+      null_ls.setup {
+        sources = {
+          -- null_ls.builtins.completion.spell
+          -- note: global config: ~/.config/black
+          -- null_ls.builtins.formatting.black,
+          -- note: workaround to ignore pyproject.toml
+          null_ls.builtins.formatting.black.with { extra_args = { "--config", os.getenv "HOME" .. "/.config/black" } },
+        },
+      }
+    end,
+  },
+  {
     "mfussenegger/nvim-dap",
     dependencies = {
       "mfussenegger/nvim-dap-ui",
@@ -175,6 +192,22 @@ return {
         "cpp",
         "python",
         "rust",
+      },
+    },
+  },
+  {
+    "HallerPatrick/py_lsp.nvim",
+    ft = { "python" },
+    opts = {
+      language_server = "pylsp",
+      -- TODO: "Could not retrieve python path" when opening a python file outside a project
+      source_strategies = { "poetry", "default", "system" },
+      -- NOTE: for some reason formatting through pylsp isn't working, using null-ls instead
+      pylsp_plugins = {
+        autopep8 = { enabled = false },
+        pyflakes = { enabled = true },
+        yapf = { enabled = false },
+        black = { enabled = false },
       },
     },
   },
