@@ -16,7 +16,11 @@ See all features: https://nvchad.com/docs/features/
 
 ## Plugins and mappings
 
-See [lua/mappings.lua](lua/mappings.lua) and cheatsheet (`<spc>ch`).
+See [lua/mappings.lua](lua/mappings.lua), cheatsheet (`<spc>ch`) and
+`:Telescope keymaps`.
+
+The LSP client sets various keymaps when it starts (`K`, `grn`, `gra`, `grr`,
+...), see `:help lsp-defaults` or `:Telescope keymaps` with filter `vim.lsp`.
 
 ### Notes on specific plugins
 
