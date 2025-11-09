@@ -48,6 +48,9 @@ the original text case
 
 - vim-lastplace: reopens files at your last edit position
 
+- winresize + submode: `<spc>re` enters resize mode, `h`/`j`/`k`/`l` resize
+  current window, `q` or `<esc>` leaves resize mode
+
 ## Plain (Neo)Vim tricks
 ```
   gj / gk  -- move the cursor through wrapped lines
