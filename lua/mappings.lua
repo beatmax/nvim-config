@@ -141,6 +141,7 @@ map(
   "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>",
   { desc = "Telescope LSP dynamic workspace symbols" }
 )
+map("n", "<leader>fr", "<cmd> Telescope resume <CR>", { desc = "Telescope resume" })
 
 -- Text-case
 -- https://github.com/johmsalas/text-case.nvim
