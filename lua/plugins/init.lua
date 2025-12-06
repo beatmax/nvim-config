@@ -125,6 +125,7 @@ return {
       require("neotest").setup {
         adapters = {
           require("neotest-gtest").setup {},
+          require "rustaceanvim.neotest",
         },
       }
     end,
@@ -210,6 +211,27 @@ return {
         black = { enabled = false },
       },
     },
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6", -- avoid breaking changes
+    lazy = false, -- this plugin is already lazy
+    opts = {
+      server = {
+        default_settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = true,
+            diagnostics = {
+              -- diagnostics only on save
+              enable = false,
+            },
+          },
+        },
+      },
+    },
+    config = function(_, opts)
+      vim.g.rustaceanvim = opts
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",

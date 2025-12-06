@@ -36,6 +36,10 @@ line-length = 120
 skip-magic-trailing-comma = true
 ```
 
+- rustaceanvim: requires 'rust-analyzer' (e.g., `rustup component add
+rust-analyzer`); see additional mappins in
+[after/ftplugin/rust.lua](after/ftplugin/rust.lua)
+
 - telescope-live-grep-args:
 ```
   <spc>fw  -- live grep modified to accept arguments
