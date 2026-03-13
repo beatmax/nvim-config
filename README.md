@@ -5,6 +5,9 @@
 See https://nvchad.com/docs/quickstart/install , just use this repo instead of
 NvChad/starter.
 
+Note: Mason may need `npm` to install some packages, which can be installed
+following these instructions: https://nodejs.org/en/download .
+
 ## Plain NvChad features
 ```
 - <spc>ch  -- cheatsheet

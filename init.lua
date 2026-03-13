@@ -35,3 +35,20 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+--
+-- local
+--
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function()
+    vim.diagnostic.config {
+      virtual_text = {
+        severity = { min = vim.diagnostic.severity.WARN },
+      },
+      jump = {
+        severity = { min = vim.diagnostic.severity.WARN },
+      },
+    }
+  end,
+})

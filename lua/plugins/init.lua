@@ -13,7 +13,12 @@ return {
       "AerialNext",
       "AerialPrev",
     },
-    opts = {},
+    opts = {
+      backends = {
+        ["_"] = { "treesitter", "lsp", "markdown", "asciidoc", "man" },
+        cpp = { "lsp" },
+      },
+    },
     -- Optional dependencies
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
@@ -112,6 +117,16 @@ return {
     end,
   },
   {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "tree-sitter-cli",
+      },
+    },
+  },
+  {
     "jay-babu/mason-nvim-dap.nvim",
     ft = { "c", "cpp", "rust" },
     dependencies = {
@@ -204,11 +219,13 @@ return {
         "vim",
         "lua",
         "vimdoc",
+        "xml",
         "html",
         "css",
         "bash",
         "comment",
         "cpp",
+        "java",
         "python",
         "rust",
       },
@@ -291,7 +308,15 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    opts = {},
+    opts = {
+      modes = {
+        diagnostics = {
+          filter = {
+            severity = { vim.diagnostic.severity.WARN },
+          },
+        },
+      },
+    },
   },
   {
     -- restore cursor position: https://github.com/neovim/neovim/issues/16339

@@ -132,7 +132,9 @@ end, { desc = "Neotest Summary toggle" })
 map("n", "<C-b>", "<cmd> Telescope buffers sort_mru=true <CR>", { desc = "Telescope Find buffers (mru)" })
 map("n", "<leader>fd", "<cmd> Telescope diagnostics <CR>", { desc = "Telescope Diagnostics" })
 map("n", "<leader>fg", "<cmd> Telescope grep_string <CR>", { desc = "Telescope Search string under cursor" })
+map("n", "<leader>fi", "<cmd> Telescope lsp_implementations <CR>", { desc = "Telescope LSP implementations" })
 map("n", "<leader>fk", "<cmd> Telescope keymaps <CR>", { desc = "Telescope Keymaps" })
+map("n", "<leader>fn", "<cmd> Telescope aerial <CR>", { desc = "Telescope Aerial" })
 map("n", "<leader>fw", "<cmd> Telescope live_grep_args <CR>", { desc = "Telescope Live grep (args)" })
 map("n", "<leader>qf", "<cmd> Telescope quickfix <CR>", { desc = "Telescope List quickfix items" })
 map("n", "<leader>qh", "<cmd> Telescope quickfixhistory <CR>", { desc = "Telescope List quickfix history" })
@@ -154,6 +156,9 @@ map("n", "<leader>fr", "<cmd> Telescope resume <CR>", { desc = "Telescope resume
 map("n", "tc", function()
   vim.cmd "Trouble close"
 end, { desc = "Trouble Close" })
+map("n", "td", function()
+  vim.cmd "Trouble diagnostics"
+end, { desc = "Trouble Diagnostics" })
 map("n", "tq", function()
   vim.cmd "cclose"
   vim.cmd "Trouble quickfix toggle"

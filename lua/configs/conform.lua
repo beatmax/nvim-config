@@ -5,6 +5,8 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     htmldjango = { "djlint" },
+    xml = { "xmlformat" },
+    xsd = { "xmlformat" },
   },
 
   -- format_on_save = {
