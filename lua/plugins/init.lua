@@ -54,9 +54,11 @@ return {
   },
   {
     "saecki/crates.nvim",
+    tag = "stable",
     event = { "BufRead Cargo.toml" },
     config = function()
       require("crates").setup {
+        enable_update_available_warning = false,
         lsp = {
           enabled = true,
           actions = true,
@@ -83,7 +85,9 @@ return {
     },
   },
   {
+    -- NOTE: archived; switch to snacks?
     "stevearc/dressing.nvim",
+    lazy = false,
     opts = {},
   },
   {
