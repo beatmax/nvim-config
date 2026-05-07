@@ -5,6 +5,9 @@
 See https://nvchad.com/docs/quickstart/install , just use this repo instead of
 NvChad/starter.
 
+Run `:MasonToolsInstall` in addition to `:MasonInstallAll` (which is provided
+by NvChad, and doesn't have the `mason-tool-installer` plugin into account).
+
 Note: Mason may need `npm` to install some packages, which can be installed
 following these instructions: https://nodejs.org/en/download .
 

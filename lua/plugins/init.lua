@@ -117,16 +117,6 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "tree-sitter-cli",
-      },
-    },
-  },
-  {
     "jay-babu/mason-nvim-dap.nvim",
     ft = { "c", "cpp", "rust" },
     dependencies = {
@@ -134,6 +124,21 @@ return {
       "williamboman/mason.nvim",
     },
     opts = require "configs.mason-nvim-dap",
+  },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    cmd = { "MasonToolsInstall", "MasonToolsUpdate", "MasonToolsClean" },
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim", -- accept lspconfig package names
+    },
+    opts = {
+      ensure_installed = {
+        "lua-language-server",
+        "stylua",
+        "tree-sitter-cli",
+      },
+      run_on_start = false, -- note: requires "lazy = false" (instead of "cmd = ...")
+    },
   },
   {
     "NeogitOrg/neogit",
@@ -249,7 +254,7 @@ return {
   },
   {
     "mrcjkb/rustaceanvim",
-    version = "^6", -- avoid breaking changes
+    version = "^9", -- avoid breaking changes
     lazy = false, -- this plugin is already lazy
     opts = {
       server = {
