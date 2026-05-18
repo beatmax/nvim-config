@@ -33,7 +33,11 @@ map("n", "<leader>cp", "<cmd> CMakeSelectBuildPreset <CR>", { desc = "CMake Sele
 map("n", "<leader>k", function()
   vim.cmd "wa"
   vim.cmd "Trouble quickfix close"
-  vim.cmd "CMakeBuild"
+  if vim.fn.exists(":CMakeBuild") == 2 then
+    vim.cmd "CMakeBuild"
+  else
+    vim.cmd "make"
+  end
 end, { desc = "CMake Write all and build" })
 
 -- Emoji
