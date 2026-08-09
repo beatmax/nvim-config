@@ -39,6 +39,8 @@ M.base46 = {
     NeogitDiffDeleteHighlight = { fg="#cf6a4c" },
     NeogitDiffDeleteCursor = { fg="#ef8a6c" },
 
+    CurSearch = { fg="#ffff6b", bg="#444267", bold=true },
+
     -- workaround for https://github.com/neovim/neovim/issues/9800
     CursorLine = { ctermfg = "White" },
 
