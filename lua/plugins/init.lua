@@ -212,6 +212,38 @@ return {
     },
   },
   {
+    -- NOTE: conditional (NVIM_JAVA_* env. variables)
+    "nvim-java/nvim-java",
+    ft = { "java" },
+    cond = function()
+      return os.getenv("NVIM_JAVA_ENABLED") ~= nil
+    end,
+    config = function()
+      require("java").setup {
+        spring_boot_tools = {
+          enable = false,
+        },
+      }
+      vim.lsp.config("jdtls", {
+        -- NOTE: sometimes ~/.cache/nvim/jdtls/ must be removed (e.g., after structure changes)
+        settings = {
+          java = {
+            configuration = {
+              runtimes = {
+                {
+                  name = os.getenv("NVIM_JAVA_JDTLS_NAME"),
+                  path = os.getenv("NVIM_JAVA_JDTLS_PATH"),
+                  default = true,
+                },
+              },
+            },
+          },
+        },
+      })
+      vim.lsp.enable "jdtls"
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
