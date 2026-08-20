@@ -269,7 +269,10 @@ return {
     },
   },
   {
-    "HallerPatrick/py_lsp.nvim",
+    -- TODO: coffebar fixes https://github.com/HallerPatrick/py_lsp.nvim/issues/49
+    --       (maybe switch to https://github.com/jglasovic/venv-lsp.nvim with pyright)
+    -- "HallerPatrick/py_lsp.nvim",
+    "coffebar/py_lsp.nvim",
     ft = { "python" },
     opts = {
       language_server = "pylsp",
